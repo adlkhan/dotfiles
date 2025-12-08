@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR=nvim
 
 # Add brew
 eval "$(/usr/local/bin/brew shellenv)"
