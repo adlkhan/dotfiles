@@ -8,3 +8,5 @@ eval "$(/usr/local/bin/brew shellenv)"
 
 # ohmyzsh settings
 # plugins=(git rails)
+
+alias n='nvim'
