@@ -7,7 +7,6 @@ directory is a stow *package* containing the path it maps to, relative to `$HOME
 
 ```
 hypr/.config/hypr/input.lua       Hyprland input config (XP-Pen tablet rotation)
-hypr/.config/hypr/monitors.lua    Monitor layout and display scaling
 keyd/.config/keyd/default.conf    keyd tablet key remapping (REFERENCE COPY -- see below)
 ```
 
@@ -73,5 +72,8 @@ stow -d ~/Work/dotfiles -t ~ --no-folding -R hypr keyd
 - `input.lua` uses `left_handed = true` for the tablet's 180-degree rotation.
   Do not use `transform` -- Hyprland accepts it but it has no effect on tablets
   in 0.56.2.
-- `monitors.lua` is written by `omarchy hyprland monitor scaling`, so changing
-  display scale from the menu or a keybinding edits this tracked file.
+- `~/.config/hypr/monitors.lua` is deliberately NOT tracked here. Omarchy
+  rewrites it with `sed -i` whenever display scale changes via
+  `omarchy hyprland monitor scaling` (the menu or a keybinding), so tracking it
+  would produce churn on every scale adjustment and fight the tool that owns
+  the file. It stays a real file managed by Omarchy.
